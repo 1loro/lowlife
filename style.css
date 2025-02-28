@@ -133,7 +133,7 @@ header .hamburger-menu {
 
 section {
   min-height: 100vh;
-  background-image: url("bg.png");
+  background-image: url("img/bg.png");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -202,7 +202,7 @@ section .container .content .action .action-2:hover {
 
 .about-section {
   padding: 120px 0 50px;
-  background-image: url("bg.png");
+  background-image: url("img/bg.png");
   min-height: 100vh;
 }
 
