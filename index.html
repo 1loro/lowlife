@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/1.gif">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>Low Life</title>
+
+    <style>
+        body {
+            cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path fill="%23FFF" stroke="%23000" stroke-width="2" d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.35Z"></path></svg>'), auto;
+        }
+
+        .swiper {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .articles-section {
+            background-color: white;
+            min-height: 100vh;
+            position: relative;
+            padding-top: 100px;
+        }
+
+        .article {
+            box-sizing: border-box;
+            margin-bottom: 30px;
+        }
+
+        .article div {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 75%;
+            overflow: hidden;
+        }
+
+        .article img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-container {
+                display: block;
+            }
+
+            .carousel-container .article {
+                flex: 0 0 55%;
+                margin-bottom: 20px;
+            }
+        }
+
+        .carousel-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .article {
+            flex: 0 0 33.33%;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+        }
+        .swiper-button-next,
+.swiper-button-prev {
+    color: #000000; /* Cambia el color de las flechas a rojo */
+}
+@media (min-width: 768px) {
+    .swiper-button-prev {
+        left: 50px; /* Mueve el botón "anterior" 50px desde el borde izquierdo */
+    }
+
+    .swiper-button-next {
+        right: 50px; /* Mueve el botón "siguiente" 50px desde el borde derecho */
+    }
+}
+
+/* Estilos base para los artículos */
+.article {
+    position: relative;
+    overflow: hidden; /* Oculta el desbordamiento del zoom */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+/* Efecto hover */
+.article:hover {
+    transform: scale(1.02); /* Zoom pequeño (5% más grande) */
+    
+}
+
+/* Estilos para la imagen dentro del artículo */
+.article img {
+    transition: transform 0.3s ease; /* Transición suave para la imagen */
+}
+
+/* Efecto hover en la imagen */
+.article:hover img {
+    transform: scale(1.02); /* Zoom ligeramente más grande en la imagen */
+}
+
+/* Estilos para el texto dentro del artículo */
+.article h2,
+.article p {
+    transition: color 0.3s ease; /* Transición suave para el texto */
+}
+
+/* Efecto hover en el texto */
+.article:hover h2 {
+    color: #000; /* Cambia el color del título al hacer hover */
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="https://1loro.github.io/lowlife/index.html">
+                <img src="img/1.gif" alt="logo">
+            </a>
+            <a href="#">Low Life</a>
+        </div>
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="https://1loro.github.io/lowlife/about.html">About</a>
+            <a href="https://www.instagram.com/lowlife_magazine/" target="_blank" class="instagram-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </nav>
+
+        <button class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="mobile-nav">
+            <a href="https://1loro.github.io/lowlife">Home</a>
+            <a href="https://1loro.github.io/lowlife/about.html">About</a>
+            <a href="https://www.instagram.com/lowlife_magazine/" target="_blank" class="instagram-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </header>
+
+    <section class="main-section" style="height: 100vh; background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;">
+        <div class="container">
+            <div class="content2">
+                <h1 style="font-family: 'Kanit', sans-serif; font-size: 4rem; color: #fff; display: inline-block; margin-right: 10px;">Lowlife Magazine</h1>
+                <br>
+                <p style="display: inline-block; font-size: 1.5rem;">Revista digital para creativos</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="articles-section">
+        <div class="container">
+            <h1 style="text-align: center; font-size: 3.5rem; color: #333; margin-bottom: 40px;">Articles</h1>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="pagina-articulo-1.html" class="article">
+                            <div>
+                                <img src="img/damn.jpg" alt="Imagen artículo 1">
+                            </div>
+                            <p style="font-size: 0.9rem; color: #888; text-align: center; margin: 10px 0;">February 23, 2025</p>
+                            <h2 style="font-size: 1.5rem; color: #333; margin: 10px; text-align: center;">INFINITY SADNESS</h2>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="pagina-articulo-2.html" class="article">
+                            <div>
+                                <img src="img/vegeta.jpg" alt="Imagen artículo 2">
+                            </div>
+                            <p style="font-size: 0.9rem; color: #888; text-align: center; margin: 10px 0;">February 23, 2025</p>
+                            <h2 style="font-size: 1.5rem; color: #333; margin: 10px; text-align: center;">Título del artículo 2</h2>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="pagina-articulo-3.html" class="article">
+                            <div>
+                                <img src="img/mew2.jpg" alt="Imagen artículo 3">
+                            </div>
+                            <p style="font-size: 0.9rem; color: #888; text-align: center; margin: 10px 0;">February 23, 2025</p>
+                            <h2 style="font-size: 1.5rem; color: #333; margin: 10px; text-align: center;">Título del artículo 3</h2>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="pagina-articulo-3.html" class="article">
+                          <div>
+                              <img src="img/buu.jpg" alt="Imagen artículo 3">
+                          </div>
+                          <p style="font-size: 0.9rem; color: #888; text-align: center; margin: 10px 0;">February 23, 2025</p>
+                          <h2 style="font-size: 1.5rem; color: #333; margin-top: 10px; text-align: center;">Título del artículo 3</h2>
+                      </a>
+                  </div>
+                </div>
+                
+            </div>
+            <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <div class="new-section" style="background-color: black; min-height: 100vh; display: flex; align-items: center; padding: 10px 50px; position: relative; z-index: 1;">
+        <div class="text-container" style="flex: 1; color: white; max-width: 50%;">
+            <h1 style="font-size: 3rem; margin-bottom: 20px;">¿Quién soy?</h1>
+            <p style="font-size: 1.2rem; line-height: 1.6;">
+                Lowlife. Coming soon.
+            </p>
+        </div>
+        <div class="image-container" style="flex: 1; text-align: right;">
+            <img src="img/foto.jpg" alt="Imagen de la categoría" style="max-width: 90%; height: 95%; border-radius: 10px;">
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 20
+                }
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const title = document.querySelector(".content2 h1");
+
+            title.addEventListener("mousemove", function (e) {
+                for (let i = 0; i < 1; i++) {
+                    createStar(e.clientX, e.clientY);
+                }
+            });
+
+            function createStar(x, y) {
+                const star = document.createElement("div");
+                star.classList.add("star");
+
+                const size = Math.random() * 4 + 4;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+
+                star.style.left = `${x + (Math.random() * 25 - 15)}px`;
+                star.style.top = `${y + (Math.random() * 15 - 10)}px`;
+
+                document.body.appendChild(star);
+
+                setTimeout(() => {
+                    star.remove();
+                }, 1000);
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const mobileNav = document.querySelector('.mobile-nav');
+
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+            });
+
+            const mobileLinks = mobileNav.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                });
+            });
+
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+
+                if (window.scrollY > 150) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Low Life Magazine</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .about-container {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .title {
+            font-family: 'Kanit', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            color: #bbb;
+            line-height: 1.6;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 3rem;
+                letter-spacing: 3px;
+            }
+
+            .description {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+
+            .description {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="about-container">
+        <div class="title">About Us</div>
+        <p class="description">
+            Lowlife es un grupo conformado por diversos creativos buscando difundir el arte en todas sus formas, ya sea: moda, fotografía, diseño, música, etc.
+
+Nos enfocamos en exponer esa voz que mucha veces queda silenciada en un mundo lleno de ruido.
+
+Buscamos trabajos y propuestas con un estilo único, personal y sincero asociados a conceptos como: creatividad, diversidad, contemporaneo, libertad, atemporal, etc.
+        </p>
+    </div>
+</body>
+</html>

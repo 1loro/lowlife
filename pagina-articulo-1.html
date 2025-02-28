@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Low Life Magazine</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px;
+            background-color: #222;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #bbb;
+        }
+
+        .main-text {
+            font-family: 'Kanit', sans-serif;
+            font-size: 6rem;
+            font-weight: 900;
+            color: white;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Media query para pantallas pequeñas */
+        @media (max-width: 768px) {
+            .main-text {
+                font-size: 4rem; /* Reducir el tamaño de la fuente en pantallas pequeñas */
+                letter-spacing: 3px; /* Ajustar el espaciado de las letras */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-text {
+                font-size: 3rem; /* Más pequeño aún para dispositivos muy pequeños */
+                letter-spacing: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-text">
+        INFINITY SADNESS
+    </div>
+</body>
+</html>
