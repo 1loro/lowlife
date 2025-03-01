@@ -656,15 +656,3 @@ a {
       font-size: 2.5rem; /* Reduce el tamaño del título en pantallas pequeñas */
   }
 }
-.main-section {
-  background-size: cover; /* Asegura que la imagen cubra todo el espacio */
-  background-position: center; /* Centra la imagen de fondo */
-  background-attachment: fixed; /* Mantiene la imagen fija cuando se desplaza, puedes probar sin esto si te causa problemas en móviles */
-}
-
-@media (max-width: 768px) {
-  .main-section {
-      background-attachment: scroll; /* Cambia el comportamiento del fondo a "scroll" en pantallas más pequeñas */
-      background-size: contain; /* Hace que la imagen se ajuste dentro del contenedor sin recortarse */
-  }
-}
