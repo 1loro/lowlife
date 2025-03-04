@@ -31,7 +31,7 @@ body {
 }
 
 .half img {
-    max-width: 100%;
+    max-width: 90%;
     max-height: 100%;
     object-fit: cover;
     animation: fadeIn 2s ease-in-out;
@@ -219,7 +219,7 @@ body {
 
     .half {
         width: 100%;
-        height: 50vh;
+        height: 40vh;
     }
 
     .white-background .image-container img {
