@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Lowlife Magazine">
     <meta property="og:description" content="Revista digital para creativos">
-    <meta property="og:image" content="https://raw.githubusercontent.com/1loro/lowlife/refs/heads/main/img/1.gif"> 
+    <meta property="og:image" content="https://raw.githubusercontent.com/1loro/lowlife/refs/heads/main/img/logo.png"> 
     <meta property="og:url" content="https://1loro.github.io/lowlife/"> 
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_ES">
@@ -16,13 +16,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Lowlife - Magazine</title>
 
     <style>
         body {
             cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path fill="%23FFF" stroke="%23000" stroke-width="2" d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.35Z"></path></svg>'), auto;
         }
-        
+
         .swiper {
             width: 90%;
             max-width: 1200px;
@@ -30,9 +31,9 @@
         }
 
         .swiper-slide {
-            
+            display: flex;
             flex-direction: column;
-            align-items: center;
+            
             text-align: center;
         }
 
@@ -116,7 +117,7 @@
 
 /* Efecto hover */
 .article:hover {
-    transform: scale(1.02); /* Zoom pequeño (5% más grande) */
+    transform: scale(0.98); /* Zoom pequeño (5% más grande) */
     
 }
 
@@ -195,6 +196,111 @@ header.hidden {
 .image-container:hover .zoom-image {
     transform: scale(0.95); /* Aumenta el tamaño de la imagen al 110% */
 }
+.dots-indicator {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #ccc; /* Color de los puntos inactivos */
+    cursor: pointer; /* Cambia el cursor al pasar sobre los puntos */
+}
+
+.dot.active {
+    background-color: #333; /* Color del punto activo */
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5); /* Aumenta el tamaño del punto */
+    }
+}
+.titulo {
+    font-size: 2rem;
+    font-weight: bold;
+    display: inline-block; /* Para que cada letra pueda animarse individualmente */
+    cursor: pointer;
+}
+
+.titulo:hover {
+    animation: fade 0.5s ease-in-out, bounce 1.5s ease-in-out;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(-5px);
+    }
+}
+
+.titulo span {
+    display: inline-block; /* Cada letra se anima individualmente */
+    transition: transform 0.3s ease;
+}
+
+.titulo:hover span {
+    animation: wave 0.5s ease-in-out;
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(-5px);
+    }
+}
+
+.article div {
+    position: relative;
+    width: 100%; /* Ancho del contenedor */
+    height: 300px; /* Altura fija para todos los contenedores */
+    overflow: hidden;
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.article img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen al contenedor sin distorsionar */
+    top: 0;
+    left: 0;
+}
     </style>
 </head>
 <body>
@@ -204,12 +310,13 @@ header.hidden {
             <a href="https://1loro.github.io/lowlife/index.html">
                 <img src="img/1.gif" alt="logo">
             </a>
-            <a href="#">Lowlife</a>
+            <a class="titulo" href="index.html">Lowlife</a>
         </div>
 
         <nav class="navbar">
             <a href="index.html">Home</a>
             <a href="https://1loro.github.io/lowlife/about.html">About</a>
+            <a href="https://1loro.github.io/lowlife/contacto.html">Contacto</a>
             <a href="https://www.instagram.com/lowlife_magazine/" target="_blank" class="instagram-icon">
                 <i class="fab fa-instagram"></i>
             </a>
@@ -224,9 +331,11 @@ header.hidden {
         <div class="mobile-nav">
             <a href="https://1loro.github.io/lowlife">Home</a>
             <a href="https://1loro.github.io/lowlife/about.html">About</a>
+            <a href="https://1loro.github.io/lowlife/contacto.html">Contacto</a>
             <a href="https://www.instagram.com/lowlife_magazine/" target="_blank" class="instagram-icon">
                 <i class="fab fa-instagram"></i>
             </a>
+            
         </div>
     </header>
     <div class="transition-logo" id="transitionLogo">
@@ -248,50 +357,57 @@ header.hidden {
 
     <section class="articles-section">
         <div class="container">
-            <h1 style="text-align: center; font-size: 3.5rem; color: #000000; margin-bottom: 40px;">News</h1>
+            <h1 id="news" style="text-align: center; font-size: 3.5rem; color: #000000; margin-bottom: 40px;">News</h1>
             <div class="swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
+                    <div class="swiper-slide first-slide" style="align-items: center;">
                         <a href="pagina-articulo-1.html" class="article">
                             <div>
-                                <img src="img/damn.jpg" alt="Imagen artículo 1">
+                                <img src="img/test4.jpg" alt="Imagen artículo 1">
                             </div>
                             <p style="font-size: 0.9rem; color: #888; text-align: center; margin: 10px 0;">February 23, 2025</p>
-                            <h2 style="font-size: 1.5rem; color: #333; margin: 10px; text-align: center;">INFINITY SADNESS</h2>
+                            <h2 style="font-size: 1.5rem; color: #333; margin: 10px; text-align: center;">CAMILLE</h2>
                         </a>
                     </div>
-                    <div class="swiper-slide">
-                        <a href="pagina-articulo-1.html" class="article">
+                    <div class="swiper-slide" style="align-items: center;">
+                        <a href="pagina-articulo-2.html" class="article">
                             <div>
-                                <img src="img/vegeta.jpg" alt="Imagen artículo 2">
+                                <img src="img/test2.jpg" alt="Imagen artículo 2">
                             </div>
                             <p style="font-size: 0.9rem; color: #888; text-align: center; margin: 10px 0;">February 23, 2025</p>
-                            <h2 style="font-size: 1.5rem; color: #333; margin: 10px; text-align: center;">Título del artículo 2</h2>
+                            <h2 style="font-size: 1.5rem; color: #333; margin: 10px; text-align: center;">LOWLIFE</h2>
                         </a>
                     </div>
-                    <div class="swiper-slide">
-                        <a href="pagina-articulo-1.html" class="article">
+                    <div class="swiper-slide" style="align-items: center;">
+                        <a href="pagina-articulo-3.html" class="article">
                             <div>
-                                <img src="img/mew2.jpg" alt="Imagen artículo 3">
+                                <img src="img/test3.jpg" alt="Imagen artículo 3">
                             </div>
                             <p style="font-size: 0.9rem; color: #888; text-align: center; margin: 10px 0;">February 23, 2025</p>
-                            <h2 style="font-size: 1.5rem; color: #333; margin: 10px; text-align: center;">Título del- artículo 3</h2>
+                            <h2 style="font-size: 1.5rem; color: #333; margin: 10px; text-align: center;">ESTADO</h2>
                         </a>
                     </div>
-                    <div class="swiper-slide">
-                      <a href="pagina-articulo-1.html" class="article">
-                          <div>
-                              <img src="img/buu.jpg" alt="Imagen artículo 3">
-                          </div>
-                          <p style="font-size: 0.9rem; color: #888; text-align: center; margin: 10px 0;">February 23, 2025</p>
-                          <h2 style="font-size: 1.5rem; color: #333; margin-top: 10px; text-align: center;">Título del artículo 3</h2>
-                      </a>
-                  </div>
+                    <div class="swiper-slide" style="align-items: center;">
+                        <a href="pagina-articulo-4.html" class="article">
+                            <div>
+                                <img src="img/test1.jpg" alt="Imagen artículo 1">
+                            </div>
+                            <p style="font-size: 0.9rem; color: #888; text-align: center; margin: 10px 0;">February 23, 2025</p>
+                            <h2 style="font-size: 1.5rem; color: #333; margin: 10px; text-align: center;">EDITORIAL</h2>
+                        </a>
+                    </div>
                 </div>
                 
             </div>
-            <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+            
+            <div class="dots-indicator">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            
+    </div>
         </div>
     </section>
     <div class="marquee-container">
@@ -347,15 +463,15 @@ header.hidden {
           
           <!-- Primer bloque de imagen -->
           <div class="image-item" style="flex: 1; min-width: 250px; text-align: center; color: rgb(0, 0, 0);">
-            <img src="img/mew2.jpg" alt="Imagen 1" style="width: 80%; height: auto; border-radius: 10px; object-fit: cover;">
-            <h2 style="font-size: 2rem; margin-top: 10px; align-items: left;">WE ARE FOOD</h2>
+            <img src="img/andi_cui.jpg" alt="Imagen 1" style="width: 80%; height: auto; border-radius: 10px; object-fit: cover;">
+            <h2 style="font-size: 2rem; margin-top: 10px; align-items: left;">NOMBRE</h2>
             <p style="font-size: 1rem; font-weight: 700; color: #0e0e0ed7;">Sobretítulo Imagen 1</p>
           </div>
           
           <!-- Segundo bloque de imagen -->
           <div class="image-item" style="flex: 1; min-width: 250px; text-align: center; color: rgb(0, 0, 0);">
-            <img src="img/mew2.jpg" alt="Imagen 2" style="width: 80%; height: auto; border-radius: 10px; object-fit: cover;">
-            <h2 style="font-size: 2rem; margin-top: 10px;">SECOND SKIN  </h2>
+            <img src="img/andi_cui.jpg" alt="Imagen 2" style="width: 80%; height: auto; border-radius: 10px; object-fit: cover;">
+            <h2 style="font-size: 2rem; margin-top: 10px;">NOMBRE  </h2>
             <p style="font-size: 1rem; font-weight: 700; color: #0e0e0ed7;">Sobretítulo Imagen 2</p>
           </div>
           
@@ -370,15 +486,15 @@ header.hidden {
           
           <!-- Primer bloque de imagen -->
           <div class="image-item" style="flex: 1; min-width: 250px; text-align: center; color: rgb(0, 0, 0);">
-            <img src="img/mew2.jpg" alt="Imagen 1" style="width: 80%; height: auto; border-radius: 10px; object-fit: cover;">
-            <h2 style="font-size: 2rem; margin-top: 10px; align-items: left;">WE ARE FOOD</h2>
+            <img src="img/andi_cui.jpg" alt="Imagen 1" style="width: 80%; height: auto; border-radius: 10px; object-fit: cover;">
+            <h2 style="font-size: 2rem; margin-top: 10px; align-items: left;">NOMBRE</h2>
             <p style="font-size: 1rem; font-weight: 700; color: #0e0e0ed7;">Sobretítulo Imagen 1</p>
           </div>
           
           <!-- Segundo bloque de imagen -->
           <div class="image-item" style="flex: 1; min-width: 250px; text-align: center; color: rgb(0, 0, 0);">
-            <img src="img/mew2.jpg" alt="Imagen 2" style="width: 80%; height: auto; border-radius: 10px; object-fit: cover;">
-            <h2 style="font-size: 2rem; margin-top: 10px;">SECOND SKIN  </h2>
+            <img src="img/andi_cui.jpg" alt="Imagen 2" style="width: 80%; height: auto; border-radius: 10px; object-fit: cover;">
+            <h2 style="font-size: 2rem; margin-top: 10px;">NOMBRE</h2>
             <p style="font-size: 1rem; font-weight: 700; color: #0e0e0ed7;">Sobretítulo Imagen 2</p>
           </div>
           
@@ -398,10 +514,10 @@ header.hidden {
                     <div class="swiper-slide">
                         <a href="entrevista.html" class="article">
                             <div>
-                                <img src="img/foto.jpg" alt="Entrevista 1">
+                                <img src="img/andi_cui.jpg" alt="Entrevista 1">
                             </div>
-                            <p style="font-size: 0.9rem; color: #fff; text-align: center; margin: 10px 0;">Entrevista 1</p>
-                            <h2 style="font-size: 1.8rem; color: #fff; margin: 10px; text-align: center;">Entrevista 1</h2>
+                            <p style="font-size: 0.9rem; color: #fff; text-align: center; margin: 10px 0;">Andi Cui</p>
+                            <h2 style="font-size: 1.8rem; color: #fff; margin: 10px; text-align: center;">El joven diseñador de moda.</h2>
                             
                         </a>
                     </div>
@@ -478,11 +594,9 @@ header.hidden {
                     <li style="margin-bottom: 10px;">
                         <a href="about.html" style="color: #fff; text-decoration: none; font-size: 0.9rem;">About</a>
                     </li>
+                    
                     <li style="margin-bottom: 10px;">
-                        <a href="#" style="color: #fff; text-decoration: none; font-size: 0.9rem;">Artículos</a>
-                    </li>
-                    <li style="margin-bottom: 10px;">
-                        <a href="#" style="color: #fff; text-decoration: none; font-size: 0.9rem;">Contacto</a>
+                        <a href="contacto.html" style="color: #fff; text-decoration: none; font-size: 0.9rem;">Contacto</a>
                     </li>
                 </ul>
             </div>
@@ -524,29 +638,38 @@ header.hidden {
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
-            slidesPerView: 1,
-            spaceBetween: 10,
-            loop: true,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+        slidesPerView: 1,
+        spaceBetween: 10,
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 20
+            }
+        },
+        on: {
+            slideChange: function () {
+                // Cambiar el estado de los puntos según el slide activo
+                const dots = document.querySelectorAll('.dot');
+                dots.forEach(dot => dot.classList.remove('active')); // Eliminar la clase 'active' de todos los puntos
+                const activeIndex = this.realIndex; // Obtener el índice del slide activo
+                dots[activeIndex].classList.add('active'); // Agregar la clase 'active' al punto correspondiente
             },
-            breakpoints: {
-                768: {
-                    slidesPerView: 3,
-                    spaceBetween: 20
-                }
+        },
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const title = document.querySelector(".content2 h1");
+
+        title.addEventListener("mousemove", function (e) {
+            for (let i = 0; i < 1; i++) {
+                createStar(e.clientX, e.clientY);
             }
         });
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const title = document.querySelector(".content2 h1");
-
-            title.addEventListener("mousemove", function (e) {
-                for (let i = 0; i < 1; i++) {
-                    createStar(e.clientX, e.clientY);
-                }
-            });
 
             function createStar(x, y) {
                 const star = document.createElement("div");
@@ -632,6 +755,9 @@ header.hidden {
         // Restaurar el header
         header.classList.remove('hidden');
     });
+
+    //
+    
     </script>
     
 </body>
