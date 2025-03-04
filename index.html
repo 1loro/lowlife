@@ -183,6 +183,18 @@
 header.hidden {
     display: none;
 }   
+
+.zoom-image {
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+.image-container:hover .zoom-image {
+    transform: scale(0.95); /* Aumenta el tamaño de la imagen al 110% */
+}
     </style>
 </head>
 <body>
@@ -192,7 +204,7 @@ header.hidden {
             <a href="https://1loro.github.io/lowlife/index.html">
                 <img src="img/1.gif" alt="logo">
             </a>
-            <a href="#">Low Life</a>
+            <a href="#">Lowlife</a>
         </div>
 
         <nav class="navbar">
@@ -236,7 +248,7 @@ header.hidden {
 
     <section class="articles-section">
         <div class="container">
-            <h1 style="text-align: center; font-size: 3.5rem; color: #333; margin-bottom: 40px;">Articles</h1>
+            <h1 style="text-align: center; font-size: 3.5rem; color: #000000; margin-bottom: 40px;">News</h1>
             <div class="swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -249,7 +261,7 @@ header.hidden {
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="pagina-articulo-2.html" class="article">
+                        <a href="pagina-articulo-1.html" class="article">
                             <div>
                                 <img src="img/vegeta.jpg" alt="Imagen artículo 2">
                             </div>
@@ -258,7 +270,7 @@ header.hidden {
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="pagina-articulo-3.html" class="article">
+                        <a href="pagina-articulo-1.html" class="article">
                             <div>
                                 <img src="img/mew2.jpg" alt="Imagen artículo 3">
                             </div>
@@ -267,7 +279,7 @@ header.hidden {
                         </a>
                     </div>
                     <div class="swiper-slide">
-                      <a href="pagina-articulo-3.html" class="article">
+                      <a href="pagina-articulo-1.html" class="article">
                           <div>
                               <img src="img/buu.jpg" alt="Imagen artículo 3">
                           </div>
@@ -290,13 +302,18 @@ header.hidden {
     </div>
     <div class="new-section" style="background-color: black; min-height: 100vh; display: flex; align-items: center; position: relative; z-index: 1;">
         <div class="text-container" style="flex: 1; color: white; max-width: 50%;">
-            <h1 style="font-size: 3rem; margin-bottom: 20px;">Moda</h1>
-            <p style="font-size: 1.2rem; line-height: 1.6;">
+            <h1 style="font-size: 5rem; margin-bottom: 20px;">Moda</h1>
+            <p style="font-size: 1.5rem; line-height: 1.6;">
                 Lowlife. Coming soon.
             </p>
         </div>
-        <div class="image-container" style="flex: 1;">
-            <img src="img/foto.jpg" alt="Imagen de la categoría" style="max-width: 90%; height: auto; border-radius: 10px; object-fit: cover;">
+        <div class="image-container" style="flex: 1; position: relative; overflow: hidden;">
+            <a href="index.html" class="image-link">
+                <img src="img/foto.jpg" alt="Imagen de la categoría" class="zoom-image">
+                <div class="overlay">
+                    
+                </div>
+            </a>
         </div>
     </div>
     
@@ -309,6 +326,9 @@ header.hidden {
             .new-section {
                 padding: 0; /* Elimina el padding en pantallas de tamaño móvil */
             }
+            .text-container{
+                padding-top: 20px;
+            }
         }
     </style>
    
@@ -316,10 +336,10 @@ header.hidden {
     
     
 
-    <div class="new-section" style="background-color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 10px 50px; position: relative; z-index: 1;">
+    <div class="new-section" style="background-color: #ffffff;  display: flex; flex-direction: column; align-items: center; padding: 10px 50px; position: relative; z-index: 1;">
         <!-- Título de la sección -->
         <div class="section-title" style="text-align: center; color: rgb(0, 0, 0); margin-bottom: 40px;">
-          <h1 style="font-size: 3rem;">EDITORIAL</h1>
+          <h1 style="font-size: 3rem; padding-top: 20px;">Diseñadores</h1>
         </div>
         
         <!-- Contenedor de imágenes -->
@@ -327,16 +347,16 @@ header.hidden {
           
           <!-- Primer bloque de imagen -->
           <div class="image-item" style="flex: 1; min-width: 250px; text-align: center; color: rgb(0, 0, 0);">
-            <img src="img/mew2.jpg" alt="Imagen 1" style="width: 100%; height: auto; border-radius: 10px; object-fit: cover;">
+            <img src="img/mew2.jpg" alt="Imagen 1" style="width: 80%; height: auto; border-radius: 10px; object-fit: cover;">
             <h2 style="font-size: 2rem; margin-top: 10px; align-items: left;">WE ARE FOOD</h2>
-            <p style="font-size: 1rem; font-weight: 700;">Sobretítulo Imagen 1</p>
+            <p style="font-size: 1rem; font-weight: 700; color: #0e0e0ed7;">Sobretítulo Imagen 1</p>
           </div>
           
           <!-- Segundo bloque de imagen -->
           <div class="image-item" style="flex: 1; min-width: 250px; text-align: center; color: rgb(0, 0, 0);">
-            <img src="img/mew2.jpg" alt="Imagen 2" style="width: 100%; height: auto; border-radius: 10px; object-fit: cover;">
+            <img src="img/mew2.jpg" alt="Imagen 2" style="width: 80%; height: auto; border-radius: 10px; object-fit: cover;">
             <h2 style="font-size: 2rem; margin-top: 10px;">SECOND SKIN  </h2>
-            <p style="font-size: 1rem; font-weight: 700; color: #0000009a;">Sobretítulo Imagen 2</p>
+            <p style="font-size: 1rem; font-weight: 700; color: #0e0e0ed7;">Sobretítulo Imagen 2</p>
           </div>
           
         </div>
@@ -350,16 +370,16 @@ header.hidden {
           
           <!-- Primer bloque de imagen -->
           <div class="image-item" style="flex: 1; min-width: 250px; text-align: center; color: rgb(0, 0, 0);">
-            <img src="img/mew2.jpg" alt="Imagen 1" style="width: 100%; height: auto; border-radius: 10px; object-fit: cover;">
+            <img src="img/mew2.jpg" alt="Imagen 1" style="width: 80%; height: auto; border-radius: 10px; object-fit: cover;">
             <h2 style="font-size: 2rem; margin-top: 10px; align-items: left;">WE ARE FOOD</h2>
-            <p style="font-size: 1rem; font-weight: 700;">Sobretítulo Imagen 1</p>
+            <p style="font-size: 1rem; font-weight: 700; color: #0e0e0ed7;">Sobretítulo Imagen 1</p>
           </div>
           
           <!-- Segundo bloque de imagen -->
           <div class="image-item" style="flex: 1; min-width: 250px; text-align: center; color: rgb(0, 0, 0);">
-            <img src="img/mew2.jpg" alt="Imagen 2" style="width: 100%; height: auto; border-radius: 10px; object-fit: cover;">
+            <img src="img/mew2.jpg" alt="Imagen 2" style="width: 80%; height: auto; border-radius: 10px; object-fit: cover;">
             <h2 style="font-size: 2rem; margin-top: 10px;">SECOND SKIN  </h2>
-            <p style="font-size: 1rem; font-weight: 700; color: #0000009a;">Sobretítulo Imagen 2</p>
+            <p style="font-size: 1rem; font-weight: 700; color: #0e0e0ed7;">Sobretítulo Imagen 2</p>
           </div>
           
         </div>
@@ -369,14 +389,14 @@ header.hidden {
         <div class="text-container" style="flex: 1; color: rgb(255, 255, 255); text-align: center;">
             <h1 style="font-size: 3rem; margin-bottom: 20px; padding-top: 2rem;">Entrevistas</h1>
             <p style="font-size: 1.2rem; line-height: 1.6;">
-                Lowlife. Coming soon.
+                Conoce a nuestros lowlifers.
             </p>
         </div>
         <div class="image-container" style="flex: 1; ">
             <div class="swiper" style="position: relative;">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <a href="#" class="article">
+                        <a href="entrevista.html" class="article">
                             <div>
                                 <img src="img/foto.jpg" alt="Entrevista 1">
                             </div>
@@ -386,7 +406,7 @@ header.hidden {
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#" class="article">
+                        <a href="entrevista.html" class="article">
                             <div>
                                 <img src="img/foto.jpg" alt="Entrevista 2">
                             </div>
@@ -396,7 +416,7 @@ header.hidden {
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#" class="article">
+                        <a href="entrevista.html" class="article">
                             <div>
                                 <img src="img/foto.jpg" alt="Entrevista 3">
                             </div>
@@ -406,7 +426,7 @@ header.hidden {
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#" class="article">
+                        <a href="entrevista.html" class="article">
                             <div>
                                 <img src="img/foto.jpg" alt="Entrevista 4">
                             </div>
@@ -472,10 +492,10 @@ header.hidden {
             <div class="footer-column" style="flex: 1; min-width: 250px; text-align: left;">
                 <h3 style="font-size: 1.2rem; margin-bottom: 15px;">Contacto</h3>
                 <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 10px;">
-                        <a href="mailto:info@lowlifemagazine.com" style="color: #fff; text-decoration: none; font-size: 0.9rem;">
+                    <li style="margin-bottom: 10px; color: #fff; text-decoration: none; font-size: 0.9rem;">
+                         
                             <i class="fas fa-envelope" style="margin-right: 10px;"></i>info@lowlifemagazine.com
-                        </a>
+                        
                     </li>
                     <li style="margin-bottom: 10px;">
                         <a href="https://www.instagram.com/lowlife_magazine/" target="_blank" style="color: #fff; text-decoration: none; font-size: 0.9rem;">
