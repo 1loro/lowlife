@@ -1,80 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Low Life Magazine</title>
+    <link rel="stylesheet" href="post.css">
     <style>
-        body {
-            background-color: black;
-            font-family: 'Arial', sans-serif;
-            color: white;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-
-        header {
-            text-align: center;
-            padding: 50px;
-            background-color: #222;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            color: #fff;
-            font-weight: bold;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            color: #bbb;
-        }
-
-        .main-text {
-            font-family: 'Kanit', sans-serif;
-            font-size: 6rem;
-            font-weight: 900;
-            color: white;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Media query para pantallas pequeñas */
-        @media (max-width: 768px) {
-            .main-text {
-                font-size: 4rem; /* Reducir el tamaño de la fuente en pantallas pequeñas */
-                letter-spacing: 3px; /* Ajustar el espaciado de las letras */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .main-text {
-                font-size: 3rem; /* Más pequeño aún para dispositivos muy pequeños */
-                letter-spacing: 2px;
-            }
-        }
+        
     </style>
 </head>
 <body>
-    <div class="main-text">
-        INFINITY SADNESS
+    <div class="split-screen">
+        <div class="half">
+            <div class="main-text">
+                INFINITY SADNESS
+            </div>
+        </div>
+        <div class="half">
+            <img src="img/foto.jpg" alt="Infinity Sadness Image">
+        </div>
     </div>
+
+    <div class="white-background">
+        
+        <div class="image-container">
+            <img src="img/bg.png" alt="Image 1" data-description="Description for Image 1">
+            <img src="img/bg2.jpg" alt="Image 2" data-description="Description for Image 2">
+            <img src="img/buu.jpg" alt="Image 3" data-description="Description for Image 3">
+        </div>
+    </div>
+
+    <!-- Modal para imágenes expandidas -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            
+            <div class="image-column">
+                <img id="expandedImage" src="" alt="Expanded Image">
+            </div>
+            <div class="text-column">
+                <div class="description" id="imageDescription"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="credits">
+        <h2>Credits</h2>
+        <p><strong>Collection:</strong> Infinity Sadness</p>
+        <p><strong>Photography:</strong> John Doe</p>
+        <p><strong>Design:</strong> Jane Smith</p>
+        <p><strong>Editor:</strong> Alex Johnson</p>
+        <div class="divider"></div>
+        <a href="index.html">
+            <p class="footer-text">
+                <img src="img/logo_blanco.png" alt="Logo" width="200px">
+            </p>
+        </a>
+    </div>
+
+    <script>
+        // JavaScript para manejar el modal
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('expandedImage');
+        const modalDesc = document.getElementById('imageDescription');
+
+        // Seleccionar todas las imágenes clickeables
+        const images = document.querySelectorAll('.white-background .image-container img');
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                modal.classList.add('open');
+                modalImg.src = img.src;
+                modalDesc.textContent = img.getAttribute('data-description');
+            });
+        });
+
+        // Cerrar el modal al hacer clic fuera de la imagen
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('open');
+            }
+        });
+    </script>
 </body>
 </html>
