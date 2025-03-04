@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Lowlife Magazine">
     <meta property="og:description" content="Revista digital para creativos">
-    <meta property="og:image" content="https://github.com/1loro/lowlife/blob/main/img/logo.png?raw=true"> 
+    <meta property="og:image" content="https://raw.githubusercontent.com/1loro/lowlife/refs/heads/main/img/1.gif"> 
     <meta property="og:url" content="https://1loro.github.io/lowlife/"> 
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_ES">
-    <meta name="description" content="Revista digital para creativos. Descubre tendencias, entrevistas y artículos exclusivos en Lowlife Magazine.">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/1.gif">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -146,7 +145,11 @@
     background-attachment: scroll !important;
   }
 }
-
+@media (max-width: 768px) {
+        .new-section {
+            padding: 0; /* Elimina el padding en pantallas de tamaño móvil */
+        }
+    }
 
     </style>
 </head>
@@ -156,7 +159,7 @@
             <a href="https://1loro.github.io/lowlife/index.html">
                 <img src="img/1.gif" alt="logo">
             </a>
-            <a href="#">Lowlife</a>
+            <a href="#">Low Life</a>
         </div>
 
         <nav class="navbar">
@@ -240,21 +243,226 @@
                 <div class="swiper-button-prev"></div>
         </div>
     </section>
-
-    <div class="new-section" style="background-color: black; min-height: 100vh; display: flex; align-items: center; padding: 10px 50px; position: relative; z-index: 1;">
-      
-      
-      <div class="text-container" style="flex: 1; color: white; max-width: 50%;">
-        <h1 style="font-size: 3rem; margin-bottom: 20px;">¿Quién soy?</h1>
-          <p style="font-size: 1.2rem; line-height: 1.6;">
-              Lowlife. Coming soon.
-          </p>
-      </div>
-        <div class="image-container" style="flex: 1; ">
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span>MODA ✦ ARTE ✦ LOWLIFE ✦ MODA ✦ ARTE ✦ LOWLIFE ✦ MODA ✦ ARTE ✦ LOWLIFE ✦ </span>
+            <span>MODA ✦ ARTE ✦ LOWLIFE ✦ MODA ✦ ARTE ✦ LOWLIFE ✦ MODA ✦ ARTE ✦ LOWLIFE ✦ </span>
+        </div>
+    </div>
+    <div class="new-section" style="background-color: black; min-height: 100vh; display: flex; align-items: center; position: relative; z-index: 1;">
+        <div class="text-container" style="flex: 1; color: white; max-width: 50%;">
+            <h1 style="font-size: 3rem; margin-bottom: 20px;">¿Quién soy?</h1>
+            <p style="font-size: 1.2rem; line-height: 1.6;">
+                Lowlife. Coming soon.
+            </p>
+        </div>
+        <div class="image-container" style="flex: 1;">
             <img src="img/foto.jpg" alt="Imagen de la categoría" style="max-width: 90%; height: auto; border-radius: 10px; object-fit: cover;">
         </div>
     </div>
+    
+    <style>
+        .new-section {
+            padding: 10px 50px; /* Padding para pantallas grandes */
+        }
+    
+        @media (max-width: 768px) {
+            .new-section {
+                padding: 0; /* Elimina el padding en pantallas de tamaño móvil */
+            }
+        }
+    </style>
+   
+    
+    
+    
 
+    <div class="new-section" style="background-color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 10px 50px; position: relative; z-index: 1;">
+        <!-- Título de la sección -->
+        <div class="section-title" style="text-align: center; color: rgb(0, 0, 0); margin-bottom: 40px;">
+          <h1 style="font-size: 3rem;">EDITORIAL</h1>
+        </div>
+        
+        <!-- Contenedor de imágenes -->
+        <div class="images-container" style="display: flex; justify-content: center; gap: 25px; width: 90%; flex-wrap: wrap;">
+          
+          <!-- Primer bloque de imagen -->
+          <div class="image-item" style="flex: 1; min-width: 250px; text-align: center; color: rgb(0, 0, 0);">
+            <img src="img/mew2.jpg" alt="Imagen 1" style="width: 100%; height: auto; border-radius: 10px; object-fit: cover;">
+            <h2 style="font-size: 2rem; margin-top: 10px; align-items: left;">WE ARE FOOD</h2>
+            <p style="font-size: 1rem; font-weight: 700;">Sobretítulo Imagen 1</p>
+          </div>
+          
+          <!-- Segundo bloque de imagen -->
+          <div class="image-item" style="flex: 1; min-width: 250px; text-align: center; color: rgb(0, 0, 0);">
+            <img src="img/mew2.jpg" alt="Imagen 2" style="width: 100%; height: auto; border-radius: 10px; object-fit: cover;">
+            <h2 style="font-size: 2rem; margin-top: 10px;">SECOND SKIN  </h2>
+            <p style="font-size: 1rem; font-weight: 700; color: #0000009a;">Sobretítulo Imagen 2</p>
+          </div>
+          
+        </div>
+      </div>
+      <div class="new-section" style="background-color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 10px 50px; position: relative; z-index: 1;">
+        <!-- Título de la sección -->
+        
+        
+        <!-- Contenedor de imágenes -->
+        <div class="images-container" style="display: flex; justify-content: center; gap: 25px; width: 90%; flex-wrap: wrap;">
+          
+          <!-- Primer bloque de imagen -->
+          <div class="image-item" style="flex: 1; min-width: 250px; text-align: center; color: rgb(0, 0, 0);">
+            <img src="img/mew2.jpg" alt="Imagen 1" style="width: 100%; height: auto; border-radius: 10px; object-fit: cover;">
+            <h2 style="font-size: 2rem; margin-top: 10px; align-items: left;">WE ARE FOOD</h2>
+            <p style="font-size: 1rem; font-weight: 700;">Sobretítulo Imagen 1</p>
+          </div>
+          
+          <!-- Segundo bloque de imagen -->
+          <div class="image-item" style="flex: 1; min-width: 250px; text-align: center; color: rgb(0, 0, 0);">
+            <img src="img/mew2.jpg" alt="Imagen 2" style="width: 100%; height: auto; border-radius: 10px; object-fit: cover;">
+            <h2 style="font-size: 2rem; margin-top: 10px;">SECOND SKIN  </h2>
+            <p style="font-size: 1rem; font-weight: 700; color: #0000009a;">Sobretítulo Imagen 2</p>
+          </div>
+          
+        </div>
+      </div>
+    
+      <div class="new-section" style="background-color: rgb(0, 0, 0); min-height: 100vh; display: flex; align-items: center; justify-content: center;  position: relative; z-index: 1;">
+        <div class="text-container" style="flex: 1; color: rgb(255, 255, 255); text-align: center;">
+            <h1 style="font-size: 3rem; margin-bottom: 20px; padding-top: 2rem;">Entrevistas</h1>
+            <p style="font-size: 1.2rem; line-height: 1.6;">
+                Lowlife. Coming soon.
+            </p>
+        </div>
+        <div class="image-container" style="flex: 1; ">
+            <div class="swiper" style="position: relative;">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#" class="article">
+                            <div>
+                                <img src="img/foto.jpg" alt="Entrevista 1">
+                            </div>
+                            <p style="font-size: 0.9rem; color: #fff; text-align: center; margin: 10px 0;">Entrevista 1</p>
+                            <h2 style="font-size: 1.8rem; color: #fff; margin: 10px; text-align: center;">Entrevista 1</h2>
+                            
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="article">
+                            <div>
+                                <img src="img/foto.jpg" alt="Entrevista 2">
+                            </div>
+                            <p style="font-size: 0.9rem; color: #fff; text-align: center; margin: 10px 0;">Entrevista 2</p>
+                            <h2 style="font-size: 1.8rem; color: #fff; margin: 10px; text-align: center;">Entrevista 2</h2>
+                            
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="article">
+                            <div>
+                                <img src="img/foto.jpg" alt="Entrevista 3">
+                            </div>
+                            <p style="font-size: 0.9rem; color: #fff; text-align: center; margin: 10px 0;">Entrevista 3</p>
+                            <h2 style="font-size: 1.8rem; color: #fff; margin: 10px; text-align: center;">Entrevista 3</h2>
+                            
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="article">
+                            <div>
+                                <img src="img/foto.jpg" alt="Entrevista 4">
+                            </div>
+                            <p style="font-size: 0.9rem; color: #fff; text-align: center; margin: 10px 0;">Entrevista 4</p>
+                            <h2 style="font-size: 1.8rem; color: #fff; margin: 10px; text-align: center;">Entrevista 4</h2>
+                            
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <div class="swiper-button-next" style="color: #fff;"></div>
+            <div class="swiper-button-prev" style="color: #fff;"></div>
+        </div>
+        <style>
+            .new-section {
+                padding: 10px 50px; /* Padding para pantallas grandes */
+            }
+        
+            @media (max-width: 768px) {
+                .new-section {
+                    padding: 0; /* Elimina el padding en pantallas de tamaño móvil */
+                }
+            }
+        </style>    
+    </div>
+      <footer style="background-color: #000; color: #fff; padding: 60px 20px; text-align: center; position: relative; z-index: 2;">
+        <div class="footer-content" style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;">
+            
+            <!-- Columna 1: Logo y descripción -->
+            <div class="footer-column" style="flex: 1; min-width: 250px; text-align: left;">
+                <div class="footer-logo" style="margin-bottom: 20px;">
+                    <img src="img/logo_blanco.png" alt="Lowlife Logo" style="width: 250px; height: auto;">
+                    <h2 style="font-size: 1.5rem; margin-top: 10px;"></h2>
+                </div>
+                <p style="font-size: 0.9rem; color: #888; line-height: 1.6;">
+                    Revista digital para creativos. Exploramos el arte, la cultura y el diseño desde una perspectiva única.
+                </p>
+            </div>
+    
+            <!-- Columna 2: Enlaces rápidos -->
+            <div class="footer-column" style="flex: 1; min-width: 250px; text-align: left;">
+                <h3 style="font-size: 1.2rem; margin-bottom: 15px;">Enlaces rápidos</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;">
+                        <a href="index.html" style="color: #fff; text-decoration: none; font-size: 0.9rem;">Home</a>
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <a href="about.html" style="color: #fff; text-decoration: none; font-size: 0.9rem;">About</a>
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <a href="#" style="color: #fff; text-decoration: none; font-size: 0.9rem;">Artículos</a>
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <a href="#" style="color: #fff; text-decoration: none; font-size: 0.9rem;">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+    
+            <!-- Columna 3: Información de contacto -->
+            <div class="footer-column" style="flex: 1; min-width: 250px; text-align: left;">
+                <h3 style="font-size: 1.2rem; margin-bottom: 15px;">Contacto</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;">
+                        <a href="mailto:info@lowlifemagazine.com" style="color: #fff; text-decoration: none; font-size: 0.9rem;">
+                            <i class="fas fa-envelope" style="margin-right: 10px;"></i>info@lowlifemagazine.com
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <a href="https://www.instagram.com/lowlife_magazine/" target="_blank" style="color: #fff; text-decoration: none; font-size: 0.9rem;">
+                            <i class="fab fa-instagram" style="margin-right: 10px;"></i>@lowlife_magazine
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <p style="color: #fff; font-size: 0.9rem; margin: 0;">
+                            <i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>Santiago, Chile
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    
+        <!-- Derechos reservados y crédito -->
+        <div class="footer-bottom" style="margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+            <p style="font-size: 0.9rem; color: #888;">
+                &copy; 2025 Lowlife Magazine. Todos los derechos reservados.
+            </p>
+            <p style="font-size: 0.9rem; color: #888; margin-top: 10px;">
+                <a href="https://github.com/1loro" target="_blank" style="color: #888; text-decoration: none;">Made with ❤️ by Lorenzo</a>
+            </p>
+        </div>
+        
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
@@ -329,5 +537,6 @@
             });
         });
     </script>
+    
 </body>
 </html>
