@@ -1,0 +1,267 @@
+/* Estilos generales */
+body {
+    background-color: black;
+    font-family: 'Kanit', sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.split-screen {
+    display: flex;
+    height: 100vh;
+}
+
+.half {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-text {
+    font-family: 'Kanit', sans-serif;
+    font-size: 6rem;
+    font-weight: 900;
+    color: white;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.half img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.white-background {
+    background-color: rgb(0, 0, 0);
+    color: black;
+    padding: 50px;
+}
+
+.white-background .image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.white-background .image-container img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.white-background .image-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.938);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 5px;
+}
+
+/* Texto fuera del modal */
+.text-description {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 300px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.text-description p {
+    margin: 0;
+}
+
+/* Efecto de puntitos en los créditos */
+.credits {
+    background-color: black;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.credits::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(102, 155, 235, 0.1) 10%, transparent 10.01%);
+    background-size: 20px 20px;
+    animation: moveParticles 10s linear infinite;
+    z-index: 1;
+}
+
+@keyframes moveParticles {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-200px);
+    }
+}
+
+.credits h2 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.credits h2::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #617eff, transparent);
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+
+.credits p {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.credits p strong {
+    font-weight: 700;
+    color: #617eff;
+}
+
+.credits .divider {
+    width: 50%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #fff, transparent);
+    margin: 40px auto;
+}
+
+.credits .footer-text img {
+    width: 200px;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .main-text {
+        font-size: 4rem;
+        letter-spacing: 3px;
+    }
+
+    .split-screen {
+        flex-direction: column;
+    }
+
+    .half {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .white-background .image-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    .credits h2 {
+        font-size: 2rem;
+    }
+
+    .credits p {
+        font-size: 1rem;
+    }
+
+    .text-description {
+        left: 10px;
+        width: 90%;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-text {
+        font-size: 3rem;
+        letter-spacing: 2px;
+    }
+
+    .text-description {
+        left: 5px;
+        width: 95%;
+        font-size: 0.9rem;
+    }
+}
+.footer-text img {
+    width: 200px;
+    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+    position: relative;  /* Agregar esto para que el z-index funcione */
+    z-index: 10;         /* Valor más alto que los demás elementos */
+}
+
+.footer-text img:hover {
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+    z-index: 20; /* Asegúrate de que el hover tenga un z-index más alto */
+}
