@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="img/1.gif">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lowlife - Soon</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            font-family: 'Kanit', sans-serif;
+            font-size: 5rem;
+            text-align: center;
+            overflow: hidden; /* Evita el desplazamiento */
+        }
+        .soon-message {
+            opacity: 0;
+            transform: translateY(-50px); /* Mueve el texto hacia arriba */
+            transition: opacity 2s ease, transform 2s ease; /* Transiciones para opacidad y transformación */
+            white-space: nowrap; /* Evita el salto de línea */
+            overflow: hidden; /* Oculta el texto que no se ha escrito */
+            border-right: 0.1em solid white; /* Cursor de tipeo */
+            animation: blink 0.7s step-end infinite; /* Parpadeo del cursor */
+        }
+        .soon-message.visible {
+            opacity: 1;
+            transform: translateY(0); /* Regresa a su posición original */
+        }
+        @keyframes blink {
+            50% {
+                border-color: transparent; /* Hace que el cursor parpadee */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="soon-message" id="soonMessage"></div>
+
+    <script>
+        const soonMessage = document.getElementById('soonMessage');
+        const message = "Soon";
+        let index = 0;
+
+        // Mostrar el mensaje "Soon" al cargar la página
+        soonMessage.classList.add('visible');
+
+        // Función para escribir el mensaje letra por letra
+        function typeMessage() {
+            if (index < message.length) {
+                soonMessage.textContent += message.charAt(index);
+                index++;
+                setTimeout(typeMessage, 300); // Cambia la velocidad de tipeo aquí (en milisegundos)
+            } else {
+                // Redirigir después de 5 segundos (5000 ms) una vez que se haya escrito el mensaje
+                setTimeout(() => {
+                    window.location.href = "index.html"; // Cambia esto a la URL que desees
+                }, 1500); // Espera 2 segundos después de que se haya escrito el mensaje
+            }
+        }
+
+        // Iniciar la animación de tipeo
+        setTimeout(typeMessage, 1000); // Espera 1 segundo antes de comenzar a escribir
+    </script>
+</body>
+</html>
